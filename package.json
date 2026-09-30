@@ -12,7 +12,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "regression": "npx playwright test",
+    "Safari": "npx playwright test --config playwright.config1.js --project=Webkit",
+    "parallel": "npx playwright test --workers=4",
+    "parallelCucumber": "npx cucumber-js features/leads.feature --parallel 2 --exit",
+    "CucumberRegression": "npx cucumber-js --tags '@Regression' --retry 1 --exit --format html:cucumber-report.html",
+    "_comment": "Run Cucumber regression using: npm run CucumberRegression"
   },
   "keywords": [],
   "author": "",
